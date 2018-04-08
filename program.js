@@ -11,6 +11,9 @@ process.stdin.on('readable', function() {
 			case '/sys':
 			process.stdout.write(process.env.OS + '\n');
 			break;
+			case '/lang':
+			process.stdout.write("System language (request works only for macOS and Linux) " + process.env.LANG + '\n');
+			break;
 			case '/exit':
 			process.stdout.write('Quitting app!\n');
 			process.exit();
